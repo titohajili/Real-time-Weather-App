@@ -217,7 +217,7 @@ position: relative;
     position: absolute;
     inset: 0;
     border-radius: inherit;
-    clip-path: circle(50% at 50% 50%);
+    clip-path: circle(100% at 50% 50%);
     transition: var(--transition-short);
 }
 
@@ -243,7 +243,7 @@ position: relative;
     background-color: var(--primary);
     color: var(--on-primary);
     height: 48px;
-    width: 48px;
+    line-height: 48px;
     max-width: max-content;
     display: flex;
     align-items: center;
@@ -264,5 +264,49 @@ position: relative;
 
 .btn-primary[disabled]::before {
     display: none;
+}
+
+/* HEADER */
+
+
+
+.header .btn-primary .span{display: none;}
+
+.logo img {
+    width: 150px;
+}
+
+.header .container,
+.header-actions {
+    display: flex;
+    align-items: center;
+}
+
+.header .container {
+    justify-content: space-between;
+}
+
+.header-actions {
+    gap: 16px;
+}
+
+/* .header .btn-primary{
+    padding-inline: 12px;
+} */
+
+.search-view{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    height: 100svh;
+    background-color: var(--surface);
+    color: var(--on-surface);
+    clip-path: circle(4% at calc(100% - 102px) 5%);
+    opacity: 0;
+    visibility: hidden;
+    z-index: 4;
+    transition: clip-path 500ms ease;
 }
 
