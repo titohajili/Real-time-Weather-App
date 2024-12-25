@@ -286,6 +286,9 @@ position: relative;
     font-size: var(--heading);
     line-height: 1.1;
 }
+.deg{
+    font-size: var(--heading);
+}
 
 .title-1{ 
     font-size: var(--title-1);
@@ -468,8 +471,8 @@ position: relative;
     grid-template-columns: minmax(0, 1fr);
     gap: 20px;
     height: 100%;
-    overflow: auto;
-    overflow: overlay;
+    overflow-y: auto;
+    overflow-y: overlay;
   }
 
   article.container::-webkit-scrollbar-thumb{
@@ -523,11 +526,42 @@ position: relative;
     align-items: center;
     gap: 8px;
   }
+ 
 
   .current-weather-card .meta-item:not(:last-child){    
     margin-block-end: 12px;  
   }
 
   .current-weather-card .meta-text{
+    margin-bottom: 0;
     color: var(--on-surface-variant);
+  }
+
+  /* HIGHLIGHTS */
+
+  .forecast-card .title-2{
+    margin-block-end: 0;
+  }
+
+  .forecast-card :is(.card-item, .icon-wrapper){
+    display: flex;
+    align-items: center; 
+  }
+
+  .forecast-card .card-item:not(:last-child){
+    margin-block-end: 12px;
+  }
+
+  .forecast-card .icon-wrapper{
+    gap: 8px;
+  }
+
+  .forecast-card .label-1{
+    color: var(--on-surface-variant);
+    font-weight: var(--weight-semiBold);
+  }
+
+  .forecast-card .card-item > .label-1{
+    width: 100%;
+    text-align: right;
   }
