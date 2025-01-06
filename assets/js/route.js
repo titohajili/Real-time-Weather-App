@@ -1,10 +1,24 @@
-'use strict';
+import {updateWeather, error404} from "./api.js";
 
-const api_key = 'f9d3ff082b0c60a4db5d66ac86c5132a';
+const defaultLocation = "#/weather?lat=51.5073219&lon=-0.1276474";
 
-/*  Fetch data from surver*/ 
-export const fetchData = function(URL, callback) {
-    fetch(`${URL}&appid=${api_key}`)
-    .then(res => res.json())
-    .then(data => callback(data));
+const currentLocation = function (){
+
 }
+
+const routes = new Map([
+    ["/current-location", currentLocation],
+    ["/weather", searchedLocation]
+]);
+
+const chekHash = function () {
+    
+}
+
+window.addEventListener("load", function (){
+    if(!windowlocation.hash){
+        window.location.hash = "#/current-location";
+    }else{
+        chekHash();
+    }
+})
